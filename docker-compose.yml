@@ -8,5 +8,3 @@ services:
       - 5000:5000
   mongo:
     image: mongo:4.0.7
-    ports:
-      - 27017:27017
