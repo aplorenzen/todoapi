@@ -6,6 +6,7 @@ import sys
 import os
 import logging
 from bson.json_util import ObjectId
+from flask_cors import CORS
 
 # configure logging
 logger = logging.getLogger('todoapp')
@@ -91,6 +92,7 @@ class TodoList(Resource):
 # Setup the flask API app
 app = Flask(__name__)
 api = Api(app)
+CORS(app)
 
 api.add_resource(TodoList, '/todos')
 api.add_resource(Todo, '/todos/<string:todo_id>')
